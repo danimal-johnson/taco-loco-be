@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    // Customizations
+    "prettier/prettier": "error", // Shows what Prettier will do on save.
+    "no-unused-vars": "warn", // Default was error.
+    "no-console": "off", // Allows console.log()s.
+    "func-names": "off", // Allow anonymous functions.
+    "class-methods-use-this": "off" // Don't require 'this'
+  }
+}

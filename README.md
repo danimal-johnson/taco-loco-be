@@ -45,10 +45,12 @@ To allow for expansion, this express app has been created in a modular fashion, 
 
 ## Next Steps
 
-* Testing!
+* **Testing!**
 * Authentication: Token/OAuth?
 
 * Add `customers` table. It could include name, address, email, phone number, etc.
 * Add `menu` table that includes each menu item.
 * Add `orders` with the quantity of each menu item included.
 * Add joining tables for these many-to-many relationships.
+
+## Getting Started {#start}
