@@ -54,3 +54,5 @@ To allow for expansion, this express app has been created in a modular fashion, 
 * Add joining tables for these many-to-many relationships.
 
 ## Getting Started {#start}
+
+To run the server, type `npm start`. It defaults to port 6000.

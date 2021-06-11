@@ -12,7 +12,7 @@ server.use(cors());
 server.use(express.json());
 server.use('/deliveries', deliveryRouter);
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3210;
 server.listen(PORT, () => {
   console.log(`\n=== Server listening on port ${PORT} ===\n`);
 });
