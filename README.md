@@ -55,4 +55,17 @@ To allow for expansion, this express app has been created in a modular fashion, 
 
 ## Getting Started {#start}
 
-To run the server, type `npm start`. It defaults to port 6000.
+After cloning the repository, you must create your own `.env` file in the root directory of the project to store your personal database configuration. Here is an example:
+
+```
+PORT      = 3210
+USE_HTTPS = false
+
+DB_HOSTNAME = localhost
+PG_PORT = 5432
+PG_USER = postgres_username
+PG_PASSWORD = password
+PG_DATABASE_NAME = database_name
+```
+
+To run the server in development mode, type `npm start`. It defaults to port 3210.
