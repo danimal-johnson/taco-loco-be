@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
       if (delivery)
         res.json(delivery);
       else
-        res.status(400).json({ message: `Delivery ID ${id} not found.`});
+        res.status(204).json({ message: `Delivery ID ${id} not found.`});
     })
     .catch(err => {
       console.error(`Error getting delivery #${id}: ${err}`);
@@ -65,7 +65,7 @@ router.delete('/:id', (req, res) => {
       if (request)
         res.status(200).json({ message: `ID ${id} successfully deleted.`});
       else
-        res.status(400).json({ message: `ID ${id} not found.`})
+        res.status(404).json({ message: `ID ${id} not found.`})
     })
     .catch(err => {
       console.error(err);
