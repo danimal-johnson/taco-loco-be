@@ -1,16 +1,42 @@
 # Taco Loco Delivery App API
 
 ## Table of Contents
+- [Quick Start](#start)
 - [About](#about)
 - - [MVP](#MVP)
 - [Routes](#routes)
 - [Design Considerations](#design)
 - [Next Steps](#next)
-- [Getting Started](#start)
+
+## Quick Start Guide {#start}
+
+After cloning the repository, you must create your own `.env` file in the root directory of the project to store your personal database configuration. Here is an example:
+
+```
+PORT      = 3210
+USE_HTTPS = false
+
+DB_HOSTNAME = localhost
+PG_PORT = 5432
+PG_USER = postgres_username
+PG_PASSWORD = postgres_password
+PG_DATABASE_NAME = database_name
+```
+
+Next, to build the database tables automatically, install the npm package `knex` globally and its migration command:
+```
+npm i -g knex
+knex migrate:latest
+```
+
+Finally, To run the server in development mode on port 3210, type:
+```
+npm start
+```
 
 ## About
 
-TODO: Fill this in.
+This is the backend for Taco Loco's delivery tracking app. Individual deliveries consist of a a customer name and address. Deliveries may be added, modified or deleted.
 
 ### MVP (Minimum Viable Product) {#MVP}
 The app must feature the following features:
@@ -48,24 +74,7 @@ To allow for expansion, this express app has been created in a modular fashion, 
 * **Testing!**
 * Authentication: Token/OAuth?
 
-* Add `customers` table. It could include name, address, email, phone number, etc.
-* Add `menu` table that includes each menu item.
-* Add `orders` with the quantity of each menu item included.
-* Add joining tables for these many-to-many relationships.
-
-## Getting Started {#start}
-
-After cloning the repository, you must create your own `.env` file in the root directory of the project to store your personal database configuration. Here is an example:
-
-```
-PORT      = 3210
-USE_HTTPS = false
-
-DB_HOSTNAME = localhost
-PG_PORT = 5432
-PG_USER = postgres_username
-PG_PASSWORD = password
-PG_DATABASE_NAME = database_name
-```
-
-To run the server in development mode, type `npm start`. It defaults to port 3210.
+* Add a `customers` table. Move information currently in `deliveries` table here.
+* The `deliveries` table then becomes a joining table that references both customers and orders, as well as adds time and status information.
+* Add a `menu` table that includes each menu item.
+* Add a `orders` with the quantity of each menu item included.

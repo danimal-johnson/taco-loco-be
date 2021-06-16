@@ -10,11 +10,15 @@ module.exports = {
 }
 
 function find() {
-  return db('deliveries');
+  return db('deliveries')
+    .orderBy('id');
 }
 
 function findBy(filter) {
-  return db('deliveries').where(filter);
+  return db('deliveries')
+    .where(filter)
+    .orderBy('id');
+
 }
 
 function findById(id) {
